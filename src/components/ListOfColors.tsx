@@ -16,7 +16,7 @@ class Listc extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:8080/colors`)
+    axios.get(`http://135.181.35.207:8080/colors`)
       .then(res => {
         const data = res.data;
         this.setState(data);
