@@ -48,3 +48,15 @@
   bottom: '0px';
   left: '0px'
 }
+
+.acaso {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #00004d;
+    padding: 10px;
+    width: 45%; 
+    height: 45%;
+    max-height: 180px;
+    overflow-y: scroll;
+  
+}

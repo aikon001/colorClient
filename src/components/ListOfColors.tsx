@@ -25,11 +25,11 @@ class Listc extends React.Component {
 
   render() {
     return (
-      <div>
+      <div> 
       <div>
         <h2>React - All the colors</h2>
       </div>
-      <div>
+      <div className="acaso">
         {this.state.colors.map(color => (
           <ButtonGroup>
           <Button key={color.id} variant="contained" onClick={() => store.dispatch(selectColor("#"+color.hexadecimal))}>
