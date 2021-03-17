@@ -16,7 +16,7 @@ class Listc extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://tylegroup.com:8080/colors`)
+    axios.get(`https://tylegroup.com/colors`)
       .then(res => {
         const data = res.data;
         this.setState(data);
