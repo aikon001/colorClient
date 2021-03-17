@@ -21,7 +21,7 @@ export function POSTaddColor(name, hex, r, g, b) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ "name": name, "hexadecimal": hex, "r": r, "g": g, "b": b })
   };
-  fetch('http://135.181.35.207:8080/colors', requestOptions)
+  fetch('http://tylegroup.com:8080/colors', requestOptions)
     .then(response => response.json())
     .then(res => console.log(res))
 }
@@ -37,7 +37,7 @@ export function POSTaddColor(name, hex, r, g, b) {
 
 
 export const getFromID = (id) =>
-  fetch("http://135.181.35.207:8080/colors/" + id)
+  fetch("http://tylegroup.com:8080/colors/" + id)
     .then(res => (res.ok ? res : Promise.reject(res)))
     .then(res => res.json())
     .then(res => res as Color)

@@ -61,5 +61,5 @@
     "@types/react-window": "^1.8.2",
     "eslint-plugin-react-hooks": "^4.2.0"
   },
-  "proxy": "http://localhost:9090"
+  "proxy": "https://tylegroup.com:9090"
 }
