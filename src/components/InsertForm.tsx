@@ -1,53 +1,55 @@
-import React, {ChangeEvent, FormEvent, useState} from "react";
+import React from 'react'
+import { AddFilter } from '../Redux/actions/handler'
+import store from '../Redux/store'
+import axios from 'axios'
 
-import { Input, Button} from "antd";
 
+class FormNome extends React.Component <any,AddFilter>
+{
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            name:"",
+            selected: ""
+        }
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this)
+
+    }
+    handleChange(e){
+        this.setState({name: e.target.value,selected: store.getState()});
+    }
+
+    handleSubmit = () =>{
  
+        axios.post(`https://tylegroup.com/colors`,
+                    {
+                        name:this.state.name,
+                        hexadecimal:this.state.selected.replace('#','')
+                    }
+        )
+        .then(function (response){
+            console.log(response)
+        })
+        // .then(res => {
+        //   const data = res.data;
+        //   this.setState(data);
+        // })
+    }
 
-interface Props {
-
-}
-
- 
-
-const StateHooksComponent: React.FC<Props> = ({}) => {
-
- 
-
-    const [name, setName] = useState<string>('');
-
- 
-
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-
-        e.preventDefault();
-
-        console.log(name);
-
-    };
-
- 
-
-    const onNameChange = (e: ChangeEvent<HTMLInputElement>) => {
-
-        setName(e.target.value);
-
-    };
-
- 
-
-    return (
-
-        <div>
-                <Input type="text" placeholder="name" value={name} onChange={onNameChange} />
-
-                <Button htmlType="submit" type="primary"> Submit </Button>
-        </div>
-
+    render() {
+        return(
+            <div>
+                <input type="text" value={this.state.name} onChange={this.handleChange} />
+                <input type="submit" onClick={this.handleSubmit} value="Submit" />
+                {this.state.name}
+                {this.state.selected}
+            </div>
     )
-
+  }
+  
 }
 
- 
-
-export default StateHooksComponent;
+export default FormNome

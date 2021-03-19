@@ -4,26 +4,29 @@ import ListC from './components/ListOfColors'
 import store from "./Redux/store";
 import { connect } from 'react-redux'
 
-import CustomColor from './components/colorpicker';
+import CustomInsert from './components/InsertForm';
+import CustomPicker from './components/customPicker';
 
 class App extends React.Component {
 
   
-  // constructor(props) {
-  //   super(props)
+   constructor(props) {
+     super(props)
 
   //   store.subscribe(()=>{
   //     console.log(store.getState())
   //   })
 
-  // }
+   }
 
   render(){
     return(
     
       <div className="App">
         <div className="App-header">
-          <CustomColor selected={store.getState()} />
+          <CustomInsert />
+          <CustomPicker selected={store.getState()} />
+          {store.getState()}
           <ListC />
         </div>
       </div>
