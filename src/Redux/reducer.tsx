@@ -12,8 +12,7 @@ export function rootReducer(state= initialState, action ) {
       return action.payload
     }
     case DELETE_COLOR: {
-      return Object.assign({},state,
-          action.meta.timestamp)
+      return action.payload
       }
     case ADD_COLOR: {
       return Object.assign({},action.payload.name,

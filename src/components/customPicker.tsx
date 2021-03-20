@@ -20,7 +20,6 @@ const CustomPicker = ({selected}) =>
 
     return(
         <HexColorPicker color={selected} onChange={setColor} />
-
     )
 }
 

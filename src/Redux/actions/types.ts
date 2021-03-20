@@ -11,9 +11,7 @@ interface SendColorAction {
 
 interface DeleteColorAction {
     type: typeof DELETE_COLOR
-    meta: {
-      timestamp: number
-    }
+    payload: number
   }
 
   interface AddColorAction {

@@ -8,14 +8,18 @@ class FormNome extends React.Component <any,AddFilter>
 {
 
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             name:"",
             selected: ""
         }
 
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+
+        store.subscribe(()=>{
+            this.setState({name:this.state.name,selected: store.getState()})
+        })
 
     }
     handleChange(e){
@@ -33,17 +37,13 @@ class FormNome extends React.Component <any,AddFilter>
         .then(function (response){
             console.log(response)
         })
-        // .then(res => {
-        //   const data = res.data;
-        //   this.setState(data);
-        // })
     }
 
     render() {
         return(
-            <div>
+            <div> 
                 <input type="text" value={this.state.name} onChange={this.handleChange} />
-                <input type="submit" onClick={this.handleSubmit} value="Submit" />
+                <input type="submit" onClick={this.handleSubmit} value="Add" />
                 {this.state.name}
                 {this.state.selected}
             </div>

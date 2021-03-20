@@ -9,19 +9,17 @@ export function selectColor(newColor : string ): ActionTypes {
     }
   }
 
-export function addColor(newColor: AddFilter): ActionTypes {
-  return {
-    type: ADD_COLOR,
-    payload: newColor
-  }
-}
+// export function addColor(newColor: AddFilter): ActionTypes {
+//   return {
+//     type: ADD_COLOR,
+//     payload: newColor
+//   }
+// }
   
-  // TypeScript infers that this function is returning DeleteDeleteAction
-  export function deleteColor(timestamp: number): ActionTypes {
-    return {
-      type: DELETE_COLOR,
-      meta: {
-        timestamp
-      }
-    }
-  }
+//   // TypeScript infers that this function is returning DeleteDeleteAction
+//   export function deleteColor(timestamp: number): ActionTypes {
+//     return {
+//       type: DELETE_COLOR,
+//       payload: timestamp
+//     }
+//   }
