@@ -42,7 +42,8 @@ class Listc extends React.Component <any,colorList>{
         <h2>React - All the colors</h2>
       </div>
       <div className="acaso">
-        {this.state.colors.map(color => (
+        { this.state.colors ?
+          this.state.colors.map(color => (
           <ButtonGroup>
           <Button key={`color${color.id}`} variant="contained" onClick={() => store.dispatch(selectColor("#"+color.hexadecimal))}>
               {color.name} (#{color.hexadecimal} = {color.r}  {color.g}  {color.b})
@@ -51,7 +52,10 @@ class Listc extends React.Component <any,colorList>{
               Delete
           </Button>
         </ButtonGroup>
-        ))}
+        ))
+      :
+        <p>Can't find any color! 🤷</p>
+      }
       </div>
   
     </div>
