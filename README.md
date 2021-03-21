@@ -1,6 +1,6 @@
 # Color Api client
 
-This is the front-end for [Color Api](https://github.com/aikon001/color-api)
+This is the front-end for [Color Api](https://github.com/aikon001/colorApi)
 
 Written in TypeScript on React.
 
